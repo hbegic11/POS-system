@@ -2,7 +2,7 @@ package com.example;
 
 public class StavkaRacuna {
     private String naziv;
-    private double cijena; // cijena sa PDV-om
+    private double cijena;
 
     public StavkaRacuna(String naziv, double cijena) {
         this.naziv = naziv;

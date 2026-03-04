@@ -34,7 +34,7 @@ public class Racun {
         return stavke;
     }
 
-    public void ispisiRacun(String kasir, int brojTransakcije) {
+    public void ispisiRacun(String konobar, int brojTransakcije) {
         System.out.println("\nRadnja One");
         System.out.println("Nepoznata 33");
         System.out.println("Banja Luka 78000");
@@ -50,13 +50,13 @@ public class Racun {
         System.out.println("=============================================");
         System.out.printf("%-30s %8.2f KM%n", "Osnovica:", osnovica());
         System.out.printf("%-30s %8.2f KM%n", "PDV (17%):", pdv());
-        System.out.printf("%-30s %8.2f KM%n", "Ukupno za uplatu:", ukupno());
+        System.out.printf("%-30s %8.2f KM%n", "Ukupno:", ukupno());
         System.out.println("=============================================");
-        System.out.println("Kasir: " + kasir);
+        System.out.println("Konobar: " + konobar);
         System.out.println("Broj transakcije: " + brojTransakcije);
     }
 
-    public void sacuvajUTXT(String kasir, int brojTransakcije, String imeFajla) {
+    public void sacuvajUTXT(String konobar, int brojTransakcije, String imeFajla) {
         try (FileWriter fw = new FileWriter(imeFajla)) {
 
             fw.write("Radnja One\n");
@@ -76,7 +76,7 @@ public class Racun {
             fw.write(String.format("%-30s %8.2f KM%n", "PDV (17%):", pdv()));
             fw.write(String.format("%-30s %8.2f KM%n", "Ukupno za uplatu:", ukupno()));
             fw.write("=============================================\n");
-            fw.write("Kasir: " + kasir + "\n");
+            fw.write("Konobar: " + konobar + "\n");
             fw.write("Broj transakcije: " + brojTransakcije + "\n");
 
             System.out.println("Račun je uspješno spremljen u fajl: " + imeFajla);

@@ -2,7 +2,8 @@ package com.example;
 
 import java.util.Random;
 import java.util.Scanner;
-
+// primjer bez importa
+// java.util.Random random = new java.util.Random();
 
 public class Main {
 
@@ -10,15 +11,15 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
-        int brojTransakcije = 1000 + random.nextInt(9000); // generiraj JEDAN broj
+        int brojTransakcije = 1000 + random.nextInt(9000); // generisi broj od 1000 do 9999
 
 
-        System.out.print("Unesite ime ili broj kasira: ");
-        String kasir = sc.nextLine();
+        System.out.print("Unesite ime ili broj konobara: ");
+        String konobar = sc.nextLine();
 
         Racun racun = new Racun();
 
-        // Kategorije i podmeniji
+
         Meni topli = new Meni("Topli napitci");
         topli.dodajStavkuUMenu(new StavkaRacuna("Kafa", 2.00));
         topli.dodajStavkuUMenu(new StavkaRacuna("Nescafe", 2.50));
@@ -37,9 +38,9 @@ public class Main {
         sokovi.dodajStavkuUMenu(new StavkaRacuna("Sok jagoda", 3.00));
         sokovi.dodajStavkuUMenu(new StavkaRacuna("Cedevita", 2.50));
 
-        Meni cjedjeni = new Meni("Cijeđeni sokovi");
-        cjedjeni.dodajStavkuUMenu(new StavkaRacuna("Cijeđena narandža", 5.00));
-        cjedjeni.dodajStavkuUMenu(new StavkaRacuna("Limunada", 4.00));
+        Meni cijedjeni = new Meni("Cijeđeni sokovi");
+        cijedjeni.dodajStavkuUMenu(new StavkaRacuna("Cijeđena narandža", 5.00));
+        cijedjeni.dodajStavkuUMenu(new StavkaRacuna("Limunada", 4.00));
 
         int izbor;
         do {
@@ -59,15 +60,15 @@ public class Main {
                 case 1 -> topli.prikaziMeni(racun, sc);
                 case 2 -> gazirana.prikaziMeni(racun, sc);
                 case 3 -> sokovi.prikaziMeni(racun, sc);
-                case 4 -> cjedjeni.prikaziMeni(racun, sc);
+                case 4 -> cijedjeni.prikaziMeni(racun, sc);
                 case 0 -> {
-                    racun.ispisiRacun(kasir, brojTransakcije);
+                    racun.ispisiRacun(konobar, brojTransakcije);
 
 
                     String imeFajla = "Racun_" + brojTransakcije + ".txt";
 
                     // spremanje u TXT
-                    racun.sacuvajUTXT(kasir, brojTransakcije, imeFajla);
+                    racun.sacuvajUTXT(konobar, brojTransakcije, imeFajla);
                 }
 
             }
@@ -77,14 +78,15 @@ public class Main {
         sc.close();
     }
 
-    // Validacija unosa
+
     public static int unosOpcije(Scanner sc, int min, int max) {
         int izbor;
         while (true) {
             try {
                 String linija = sc.nextLine();
                 izbor = Integer.parseInt(linija);
-                if (izbor >= min && izbor <= max) return izbor;
+                if (izbor >= min && izbor <= max)
+                    return izbor;
                 else System.out.print("Pogrešan unos! Unesite broj od " + min + " do " + max + ": ");
             } catch (NumberFormatException e) {
                 System.out.print("Pogrešan unos! Unesite broj od " + min + " do " + max + ": ");
