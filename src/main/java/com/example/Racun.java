@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Random;
+
 
 public class Racun {
 
@@ -35,12 +35,14 @@ public class Racun {
     }
 
     public void ispisiRacun(String konobar, int brojTransakcije) {
-        System.out.println("\nRadnja One");
-        System.out.println("Nepoznata 33");
+        System.out.println("\nApeiron");
+        System.out.println("Pere Krece 13");
         System.out.println("Banja Luka 78000");
         System.out.println("=============================================");
         System.out.println("Datum: " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-        System.out.println("Vrijeme: " + LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        System.out.println("Vrijeme: " + LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")));
+        System.out.println("=============================================");
+        System.out.println("              FISKALNI RAČUN                 ");
         System.out.println("=============================================");
 
         for (StavkaRacuna s : stavke) {
@@ -64,7 +66,7 @@ public class Racun {
             fw.write("Banja Luka 78000\n");
             fw.write("=============================================\n");
             fw.write("Datum: " + java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd-MM-yyyy")) + "\n");
-            fw.write("Vrijeme: " + java.time.LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss")) + "\n");
+            fw.write("Vrijeme: " + java.time.LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern("HH:mm")) + "\n");
             fw.write("=============================================\n");
 
             for (StavkaRacuna s : stavke) {
@@ -79,7 +81,7 @@ public class Racun {
             fw.write("Konobar: " + konobar + "\n");
             fw.write("Broj transakcije: " + brojTransakcije + "\n");
 
-            System.out.println("Račun je uspješno spremljen u fajl: " + imeFajla);
+            System.out.println("Račun spremljen u fajl: " + imeFajla);
 
         } catch (IOException e) {
             System.out.println("Greška prilikom spremanja računa: " + e.getMessage());
