@@ -68,6 +68,8 @@ public class Racun {
             fw.write("Datum: " + java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd-MM-yyyy")) + "\n");
             fw.write("Vrijeme: " + java.time.LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern("HH:mm")) + "\n");
             fw.write("=============================================\n");
+            fw.write("                FISKALNI RAČUN               \n");
+            fw.write("=============================================\n");
 
             for (StavkaRacuna s : stavke) {
                 fw.write(String.format("%-30s %8.2f KM%n", s.getNaziv(), s.getCijena()));
